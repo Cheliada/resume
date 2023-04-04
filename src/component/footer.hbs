@@ -1,0 +1,19 @@
+<footer>
+    <div>
+        {{#with social}}
+        {{> link text="dmytro@mail.com" href="/dmytro@mail.com" }}
+        {{> link text="+380670000123" href="/+380670000123" }}
+        {{> link text="LinkedIn" href="/LinkedIn" noLine=true }}
+        {{/with}}
+
+        <br>
+        <hr>
+        <div>
+            <em>Copyright by {{firstname}} {{lastname}}</em>
+        </div>
+
+        <br>
+
+        {{> link text="Вулиця Польова,10" noLine=true}}
+    </div>
+</footer>
