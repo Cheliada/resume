@@ -6,7 +6,6 @@
         <h3>Gender: {{gender}}</h3>
         <br>
         <hr>
-
         <section>
             <ins>
                 {{> title data="My address:" big=true}}
@@ -53,7 +52,6 @@
                             <h2>{{title}}</h2>
                         </ins>
                     </div>
-
                     <div>
                         {{startDate}} - {{endDate}}
                     </div>
@@ -66,19 +64,15 @@
                             <p>Worked on improving search algorithms</p>
                         </ol>
                     </div>
-
                     <div>
                         <b>{{industry}}</b>
 
                         {{#if year_founded includeZero=true}} ({{year_founded}}) {{/if}}
                     </div>
                     <br>
-
-
                     <section>
                         <summary><ins><b>Employees list :</b></ins></summary>
                     </section>
-
                     {{#each employees}}
                 <li>
                     <h1><b>Name:</b><ins>{{name}}</ins></h1>
@@ -86,20 +80,14 @@
                     <div><b>Department:</b><ins>{{department}}</ins></div>
                 </li>
         </section>
-
         <section>
             <summary><ins><b>Projects :</b></ins></summary>
-
             {{#each projects}}
-
-
             <li>
                 <h1><b>Name:</b><ins>{{name}}</ins></h1>
                 <div><b>Description:</b><ins>{{description}}</ins></div>
                 <div><b>Status:</b><ins>{{status}}</ins></div>
             </li>
-
-
             <br>
             <summary><ins><b>Teams :</b></ins></summary>
             <br>
@@ -140,20 +128,11 @@
             <li>{{title}}</li>
             {{/each}}
             {{/each}}
-
-
-
-
             {{/each}}
             {{/each}}
 
             {{/each}}
             <br>
-
-
-
-
-
 
             {{/each}}
         </section>
