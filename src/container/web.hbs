@@ -1,0 +1,188 @@
+<main>
+	<div>{{> title data="Technologies" big=true}}</div>
+	<br>
+	<hr>
+	<br>
+	{{#with web}}
+	<div>
+		{{#with languages.[0]}}
+		<section>
+			<div>
+				<h2><ins>Title</ins> : <i>{{name}}</i></h2>
+			</div>
+			<div>
+				<strong>Version : </strong> <ins>{{version}}</ins>
+			</div>
+			<br>
+			<div>
+				<strong>Description :</strong>
+				<p>{{description}}</p>
+			</div>
+			<div>
+				<summary>
+					<ins><strong>Teg and description :</strong></ins>
+				</summary>
+				<br>
+				{{#each elements}}
+				<div>
+					<div>
+						<ins><strong>Teg</strong></ins> : <i>{{name}}</i>
+					</div>
+					<div>
+						<ins><strong>Description :</strong></ins> <i>{{description}}</i>
+					</div>
+					<br>
+					<div>
+						<summary>
+							<ins><strong>Attributes :</strong></ins>
+						</summary>
+						<br>
+						{{#each attributes}}
+						<div>
+							<div>
+								<ins><strong>Attribute</strong></ins> : <i>{{name}}</i>
+							</div>
+							<div>
+								<ins><strong>Description :</strong></ins>
+							</div>
+							<div>
+								<i>{{description}}</i>
+							</div>
+						</div>
+
+						{{/each}}
+					</div>
+
+				</div>
+				{{/each}}
+
+			</div>
+		</section>
+		{{/with}}
+	</div>
+	<br>
+	<hr>
+	<br>
+	<div>
+		{{#with languages.[1]}}
+		<div>
+			<div>
+				<h3><ins>Name</ins> : <i>{{name}}</i></h3>
+			</div>
+			<div>
+				<strong>Version : </strong> <ins>{{version}}</ins>
+			</div>
+			<br>
+			<div>
+				<strong>Description :</strong>
+			</div>
+			<div>
+				<i>{{description}}</i>
+			</div>
+			<br>
+			<div>
+				<summary>
+					<ins><strong>Color and values :</strong></ins>
+				</summary>
+				<br>
+				{{#each properties}}
+				<div>
+					<div>
+						<ins><strong>Name :</strong></ins> : <i>{{name}}</i>
+					</div>
+					<div>
+						<ins><strong>Description :</strong></ins> <i>{{description}}</i>
+					</div>
+					<br>
+					<div>
+						<summary>
+							<ins><strong>Values :</strong></ins>
+						</summary>
+						<br>
+						{{#each values}}
+						<div>
+							<div>
+								<ins><strong>Values</strong></ins> : <i>{{value}}</i>
+							</div>
+							<div>
+								<ins><strong>Description :</strong></ins>
+							</div>
+							<div>
+								<i>{{description}}</i>
+							</div>
+						</div>
+
+						{{/each}}
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+		{{/with}}
+	</div>
+	<br>
+	<hr>
+	<br>
+	<div>
+		{{#with languages.[2]}}
+		<div>
+			<div>
+				<h3><ins>Name :</ins> : <i>{{name}}</i></h3>
+			</div>
+			<div>
+				<strong>Version : </strong> <ins>{{version}}</ins>
+			</div>
+			<br>
+			<div>
+				<strong>Description :</strong>
+			</div>
+			<div>
+				<i>{{description}}</i>
+			</div>
+			<div>
+				<br>
+				<summary>
+					<ins><strong>Teg and description :</strong></ins>
+				</summary>
+				<br>
+				{{#each functions}}
+				<div>
+					<div>
+						<ins><strong>Name :</strong></ins> : <i>{{name}}</i>
+					</div>
+					<div>
+						<ins><strong>Description :</strong></ins> <i>{{description}}</i>
+					</div>
+					<br>
+					<div>
+						<summary>
+							<ins><strong>Parameters :</strong></ins>
+						</summary>
+						<br>
+						{{#each parameters}}
+						<div>
+							<div>
+								<ins><strong>Parameters</strong></ins> : <i>{{name}}</i>
+							</div>
+							<div>
+								<ins><strong>Type</strong></ins> : <i>{{type}}</i>
+							</div>
+							<div>
+								<ins><strong>Description :</strong></ins>
+							</div>
+							<div>
+								<i>{{description}}</i>
+							</div>
+						</div>
+
+						{{/each}}
+					</div>
+
+				</div>
+				{{/each}}
+			</div>
+		</div>
+		{{/with}}
+	</div>
+	{{/with}}
+</main>
