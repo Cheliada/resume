@@ -1,0 +1,102 @@
+<main>
+	<summary>
+		<h1><mark><ins>{{name}}</ins></mark></h1>
+	</summary>
+	<br>
+	<hr>
+	<spain>
+		<i>{{description}}</i>
+	</spain>
+	<br>
+	<br>
+	<details open>
+
+		<summary><b>History</b></summary>
+		<br>
+		{{#with history}}
+		<em>Year :</em> <time>{{year}}</time>
+		<br>
+		<em>Founder :</em> <mark>{{founder}}</mark>
+		{{/with}}
+	</details>
+	<br>
+	<hr>
+	<details open>
+		<summary><b>Types</b></summary>
+		<ul>
+			{{#each types}}
+			<li>
+				{{this}}
+			</li>
+			{{/each}}
+		</ul>
+	</details>
+	<br>
+	<hr>
+	<details open>
+		<summary><b>Syntax</b></summary>
+		{{#with syntax}}
+		<section>
+			<ul>
+				<li>
+					<p><b>Variables:</b> {{variables}}</p>
+				</li>
+				<li>
+					<p><b>Functions:</b> {{functions}}</p>
+				</li>
+				<li>
+					<p><b>Conditionals:</b> {{conditionals}}</p>
+				</li>
+				<li>
+					<p><b>Loops:</b> {{loops}}</p>
+				</li>
+				<li>
+					<p><b>Classes:</b> {{classes}}</p>
+				</li>
+		</section>
+		{{/with}}
+	</details>
+	<hr>
+	<details open>
+		<summary><b>Features</b></summary>
+		<ul>
+			{{#each features}}
+			<li>
+				{{this}}
+			</li>
+			{{/each}}
+		</ul>
+	</details>
+	<br>
+	<hr>
+	<details open>
+		<summary><b>Libraries</b></summary>
+		<ul>
+			{{#each libraries}}
+			<li>
+				{{this}}
+			</li>
+			{{/each}}
+		</ul>
+	</details>
+	<hr>
+	<details open>
+		<summary><b>Tools</b></summary>
+		<ul>
+			{{#each tools}}
+			<li>
+				{{this}}
+			</li>
+			{{/each}}
+		</ul>
+	</details>
+	<hr>
+	<details open>
+		<summary><b>Community</b></summary>
+		{{#each community}}
+		<li>{{name}}</li>
+		<li>{{type}}</li>
+		{{/each}}
+	</details>
+
+</main>
