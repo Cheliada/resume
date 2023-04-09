@@ -1,0 +1,54 @@
+<main>
+	<summary>
+		<h1>{{name}}</h1>
+	</summary>
+	<br>
+	<summary><b>Users :</b></summary>
+	<br>
+	{{#each users}}
+	<div><b>ID :</b><ins>{{id}}</ins></div>
+	<div><b>Name :</b><ins>{{name}}</ins></div>
+	<div><b>Gender :</b><ins>{{gender}}</ins></div>
+	<time><b>Age :</b><ins>{{age}}</ins></time>
+	<br>
+	<hr>
+	<summary>
+		<b>Friends :</b>
+	</summary>
+	{{#each friends}}
+	<div><b>ID :</b><ins>{{id}}</ins></div>
+	<div><b>Name :</b><ins>{{name}}</ins></div>
+	<div><b>Gender :</b><ins>{{gender}}</ins></div>
+	<time><b>Age :</b><ins>{{age}}</ins></time>
+	<hr>
+	<summary>
+		<b>Mutual_friends :</b>
+	</summary>
+	{{#each mutual_friends}}
+	<div><b>ID :</b><ins>{{id}}</ins></div>
+	<div><b>Name :</b><ins>{{name}}</ins></div>
+	<div><b>Gender :</b><ins>{{gender}}</ins></div>
+	<time><b>Age :</b><ins>{{age}}</ins></time>
+	{{/each}}
+	{{/each}}
+	<hr>
+	<summary>
+		<b>Groups :</b>
+	</summary>
+	{{#each groups}}
+	<div><b>ID :</b><ins>{{id}}</ins></div>
+	<div><b>Name :</b><ins>{{name}}</ins></div>
+	<div><b>Description :</b><q>{{description}}</q></div>
+	<hr>
+	<summary>
+		<b>Members :</b>
+	</summary>
+	{{#each members}}
+	<div><b>ID :</b><ins>{{id}}</ins></div>
+	<div><b>Name :</b><ins>{{name}}</ins></div>
+	<div><b>Gender :</b><ins>{{gender}}</ins></div>
+	<time><b>Age :</b><ins>{{age}}</ins></time>
+	{{/each}}
+	{{/each}}
+	{{/each}}
+</main>
