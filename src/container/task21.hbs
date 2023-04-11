@@ -9,6 +9,7 @@
 			<br>
 			<button class="btn btn-primary">{{button_text.solid}}</button>
 			<br>
+			<br>
 			<button class="btn btn-secondary">{{button_text.outline}}</button>
 		</div>
 	</div>
@@ -21,6 +22,7 @@
 			<div class="text-primary">{{text}}</div>
 			<br>
 			<button class="btn btn-info">{{button_text.solid}}</button>
+			<br>
 			<br>
 			<button type="button" class="btn btn-outline-dark">{{button_text.outline}}</button>
 		</div>
@@ -35,19 +37,51 @@
 			<br>
 			<button type="button" class="btn-success">{{button_text.solid}}</button>
 			<br>
+			<br>
 			<button type="button" class="btn btn-outline-dark">{{button_text.outline}}</button>
 		</div>
 	</div>
 	{{/with}}
 	{{/with}}
-	<h4>{{nested_display.title}}</h4>
-	<h5>{{nested_display.children_display.title}}</h5>
-	<q class="text-uppercase">{{nested_display.children_display.text}}</q>
 	<br>
-	<button class="btn btn-primary" type="submit">{{nested_display.children_display.button.text}}</button>
+	{{#with nested_display}}
+	<div class="card">
+		<div class="card-body">
+			<h4>{{title}}</h4>
+			{{#with children_display}}
+			<h5>{{title}}</h5>
+			<q class="text-uppercase">{{text}}</q>
+			<br>
+			<button class="btn btn-primary" type="submit">{{button.text}}</button>
+		</div>
+	</div>
+	{{/with}}
 	<br>
-	<div class="text-info">{{nested_display.header_text}}</div>
+	<div class="card">
+		<div class="card-body">
+			<p class="text-uppercase">{{header_text}}</p>
+			<br>
+			<button type="button" class="btn btn-success">{{button.text}}</button>
+		</div>
+	</div>
+	{{/with}}
 	<br>
-	<button class="btn btn-dark" type="button">{{nested_display.button.text}}</button>
+	{{#with paragraph}}
+	<div class="card">
+		<div class="card-body">
+			<h4>{{title}}</h4>
+			<p class="text-uppercase">{{text}}</p>
+			<br>
+			{{#with button}}
+			<button type="button" class="btn btn-primary" disabled>{{text}}</button>
+			<a href="https://google.com" class="btn btn-link">{{url}}</a>
+			{{/with}}
+			{{#each list_name}}
+			<p>{{text}}</p>
+			<a>{{url}}</a>
+			{{/each}}
+		</div>
+	</div>
+	{{/with}}
 	</div>
 </main>
