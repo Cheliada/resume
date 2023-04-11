@@ -1,0 +1,87 @@
+<main>
+	{{#with heading}}
+	{{#with main}}
+	<div class="card">
+		<div class="card-body">
+			<h1>{{title}}</h1>
+			<p>{{text}}</p>
+			<br>
+			<br>
+			<button class="btn btn-primary">{{button_text.solid}}</button>
+			<br>
+			<br>
+			<button class="btn btn-secondary">{{button_text.outline}}</button>
+		</div>
+	</div>
+	{{/with}}
+	<br>
+	{{#with second}}
+	<div class="card">
+		<div class="card-body">
+			<h2>{{title}}</h2>
+			<div class="text-primary">{{text}}</div>
+			<br>
+			<button class="btn btn-info">{{button_text.solid}}</button>
+			<br>
+			<br>
+			<button type="button" class="btn btn-outline-dark">{{button_text.outline}}</button>
+		</div>
+	</div>
+	{{/with}}
+	<br>
+	{{#with subblock}}
+	<div class="card">
+		<div class="card-body">
+			<h3>{{title}}</h3>
+			<div class="text-primary">{{text}}</div>
+			<br>
+			<button type="button" class="btn-success">{{button_text.solid}}</button>
+			<br>
+			<br>
+			<button type="button" class="btn btn-outline-dark">{{button_text.outline}}</button>
+		</div>
+	</div>
+	{{/with}}
+	{{/with}}
+	<br>
+	{{#with nested_display}}
+	<div class="card">
+		<div class="card-body">
+			<h4>{{title}}</h4>
+			{{#with children_display}}
+			<h5>{{title}}</h5>
+			<q class="text-uppercase">{{text}}</q>
+			<br>
+			<button class="btn btn-primary" type="submit">{{button.text}}</button>
+		</div>
+	</div>
+	{{/with}}
+	<br>
+	<div class="card">
+		<div class="card-body">
+			<p class="text-uppercase">{{header_text}}</p>
+			<br>
+			<button type="button" class="btn btn-success">{{button.text}}</button>
+		</div>
+	</div>
+	{{/with}}
+	<br>
+	{{#with paragraph}}
+	<div class="card">
+		<div class="card-body">
+			<h4>{{title}}</h4>
+			<p class="text-uppercase">{{text}}</p>
+			<br>
+			{{#with button}}
+			<button type="button" class="btn btn-primary" disabled>{{text}}</button>
+			<a href="https://google.com" class="btn btn-link">{{url}}</a>
+			{{/with}}
+			{{#each list_name}}
+			<p>{{text}}</p>
+			<a>{{url}}</a>
+			{{/each}}
+		</div>
+	</div>
+	{{/with}}
+	</div>
+</main>
