@@ -1,0 +1,53 @@
+<main>
+	{{#with heading}}
+	{{#with main}}
+	<div class="card">
+		<div class="card-body">
+			<h1>{{title}}</h1>
+			<p>{{text}}</p>
+			<br>
+			<br>
+			<button class="btn btn-primary">{{button_text.solid}}</button>
+			<br>
+			<button class="btn btn-secondary">{{button_text.outline}}</button>
+		</div>
+	</div>
+	{{/with}}
+	<br>
+	{{#with second}}
+	<div class="card">
+		<div class="card-body">
+			<h2>{{title}}</h2>
+			<div class="text-primary">{{text}}</div>
+			<br>
+			<button class="btn btn-info">{{button_text.solid}}</button>
+			<br>
+			<button type="button" class="btn btn-outline-dark">{{button_text.outline}}</button>
+		</div>
+	</div>
+	{{/with}}
+	<br>
+	{{#with subblock}}
+	<div class="card">
+		<div class="card-body">
+			<h3>{{title}}</h3>
+			<div class="text-primary">{{text}}</div>
+			<br>
+			<button type="button" class="btn-success">{{button_text.solid}}</button>
+			<br>
+			<button type="button" class="btn btn-outline-dark">{{button_text.outline}}</button>
+		</div>
+	</div>
+	{{/with}}
+	{{/with}}
+	<h4>{{nested_display.title}}</h4>
+	<h5>{{nested_display.children_display.title}}</h5>
+	<q class="text-uppercase">{{nested_display.children_display.text}}</q>
+	<br>
+	<button class="btn btn-primary" type="submit">{{nested_display.children_display.button.text}}</button>
+	<br>
+	<div class="text-info">{{nested_display.header_text}}</div>
+	<br>
+	<button class="btn btn-dark" type="button">{{nested_display.button.text}}</button>
+	</div>
+</main>
