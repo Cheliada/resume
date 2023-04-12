@@ -1,0 +1,47 @@
+<main>
+    {{#with page_header}}
+    <div class="card">
+        <div class="card-body">
+            <h1 class='text-center'>{{title}}</h1>
+            <p class='text-center'>{{description}}</p>
+            {{/with}}
+            <section class='text-end'>{{section.about_us.title_list.main}}</section>
+            <p class='text-end'>{{section.about_us.title_list.sub}}</p>
+            <br>
+            <button type="button" class="btn btn-outline-info">{{section.about_us.button.text}}</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h2 class='text-muted display-5'>{{section.advantage.title}}</h2>
+            <h3 class='text-muted display-4'>{{section.advantage.efficiency.title}}</h3>
+            <h6>{{section.advantage.efficiency.sub_title}}</h6>
+            <p class='text-muted'>{{section.advantage.efficiency.description}}</p>
+            <button type="button" class="btn btn-outline-warning">{{section.advantage.efficiency.button}}</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h3 class='text-center text-muted display-4'>{{section.advantage.innovation.title}}</h3>
+            <h6 class='text-center'>{{section.advantage.innovation.sub_title}}</h6>
+            <p class='text-center text-muted'>{{section.advantage.innovation.description}}</p>
+            <button type="button" class="btn btn-outline-warning">{{section.advantage.innovation.button}}</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <section class='text-end text-muted display-4'>{{section.advantage.collaboration.title}}</section>
+            <h6 class='text-end'>{{section.advantage.collaboration.sub_title}}</h6>
+            <p class='text-end text-muted'>{{section.advantage.collaboration.description}}</p>
+            <button type="button" class="btn btn-outline-warning">{{section.advantage.collaboration.button}}</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h2 class="display-5">{{section.agreement.title}}</h2>
+            <h5>{{section.agreement.info.sub_title}}</h5>
+            <p class='text-muted'>{{section.agreement.info.detail.text}}</p>
+            <button type="button" class="btn btn-success">{{section.agreement.info.detail.button}}</button>
+        </div>
+    </div>
+</main>
