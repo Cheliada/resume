@@ -27,18 +27,19 @@
     <br>
     {{#with city}}
     <section>
-        <div class="row text-center">
+        <div class="row text-center  text-uppercase g-2">
             <div>
                 <h2>{{title}}</h2>
             </div>
             <br>
             <br>
+            <br>
+            {{#each cards}}
             <div class="col-6">
-                {{#each cards}}
                 <div class="card">
                     <div class="card-img-top text-center">
                         {{#with picture}}
-                        <img src="{{src}}" alt="{{alt}}">
+                        <img class="card-img" src="{{src}}" alt="{{alt}}">
                         {{/with}}
                     </div>
                     <div class="card-title text-center">
@@ -54,6 +55,8 @@
         </div>
     </section>
     {{/with}}
+    <br>
+    <hr>
     <br>
     <hr>
     <div class="row">
@@ -118,10 +121,10 @@
         {{#with relaxion}}
         <div class="row g-3">
             <div>
-                <p class="display-3 text-center">{{title}}</p>
+                <p class="display-3">{{title}}</p>
             </div>
             {{#each cards}}
-            <div class="col-8">
+            <div class="col-6">
                 <div class="card text-bg-secondary">
 
                     <div class="card-header text-start">
