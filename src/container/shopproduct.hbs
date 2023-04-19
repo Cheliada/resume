@@ -1,128 +1,133 @@
 <main>
 	<div class="row g-1">
-		<div class="container">
-			{{> breadcrumb}}
+		<br>
+		<br>
+		<div class="col-6">
+			<div class="container">
 
-			{{#with productData}}
+				{{> breadcrumb}}
 
-			<div class="row ps-1 pe-2">
-				<div class="col-12">
+				{{#with productData}}
 
-					<div class="card">
-						<img class="card-img-top" src="{{img}}" alt="Зображення">
+				<div class="row ps-1 pe-2">
+					<div class="col-12">
+
+						<div class="card">
+							<img class="card-img-top" src="{{img}}" alt="Зображення">
+						</div>
+
 					</div>
-
 				</div>
-			</div>
 
 
-			<div class="row ms-1 me-2 mt-4">
-				{{#with info}}
-				<div class="card pt-3 px-3">
-					<div class="card-body p-1">
-						<p class="card-title fs-4 fw-bolder">{{title}}</p>
-						<p class="card-text">{{about}}</p>
-						<em class="text-body-secondary fw-bold fs-3">{{price}}</em>
+				<div class="row ms-1 me-2 mt-4">
+					{{#with info}}
+					<div class="card pt-3 px-3">
+						<div class="card-body p-1">
+							<p class="card-title fs-4 fw-bolder">{{title}}</p>
+							<p class="card-text">{{about}}</p>
+							<em class="text-body-secondary fw-bold fs-3">{{price}}</em>
 
 
 
-						<div class="col-5">
-							<div class="row border-top pt-2 ps-2 mb-2">
+							<div class="col-5">
+								<div class="row border-top pt-2 ps-2 mb-2">
 
-								{{#each category}}
-								{{#if isHot}}
-								<div class="col-1 me-2">
-									<span class="badge rounded-pill bg-warning"> {{name}} </span>
+									{{#each category}}
+									{{#if isHot}}
+									<div class="col-1 me-2">
+										<span class="badge rounded-pill bg-warning"> {{name}} </span>
+									</div>
+									{{/if}}
+									{{#if isNew}}
+									<div class="col-1 mx-3">
+										<span class="badge rounded-pill bg-primary"> {{name}} </span>
+									</div>
+									{{/if}}
+									{{#if isBonus}}
+									<div class="col-1 mx-2">
+										<span class="badge rounded-pill bg-success"> {{name}} </span>
+									</div>
+									{{/if}}
+									{{/each}}
 								</div>
-								{{/if}}
-								{{#if isNew}}
-								<div class="col-1 mx-3">
-									<span class="badge rounded-pill bg-primary"> {{name}} </span>
-								</div>
-								{{/if}}
-								{{#if isBonus}}
-								<div class="col-1 mx-2">
-									<span class="badge rounded-pill bg-success"> {{name}} </span>
-								</div>
-								{{/if}}
-								{{/each}}
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			{{/with}}
-		</div>
-	</div>
-	{{/with}}
-
-	<div class="col-1">
-		<div class="row">
-
-		</div>
-	</div>
-	<div class="col-5">
-
-		<div class="row">
-			<div class="col-12 py-4 ">
-
-			</div>
-		</div>
-
-		{{#with productData}}
-		<div class="container mt-2">
-
-			{{#with item}}
-			<table class="table border table-striped">
-				<thead>
-					<tr class="border bg-secondary">
-						{{#each head}}
-						<th scope="col">{{this}}</th>
-						{{/each}}
-					</tr>
-				</thead>
-				<tbody>
-					{{#each body}}
-					<tr>
-						<th class="border bg-secondary" scope="row">{{this.[0]}}</th>
-						<td>{{this.[1]}}</td>
-						<td>{{this.[2]}}</td>
-					</tr>
-					{{/each}}
-				</tbody>
-			</table>
-			{{/with}}
-		</div>
-
-
-
-		<div class="container pt-2">
-
-			<div class="card">
-				{{#with param}}
-				<div class="card-header">
-					<p class="fw-bold fs-4">{{title}} :</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					{{#each list}}
-					<li class="list-group-item"><em class="fw-medium">{{this}}</em></li>
-					{{/each}}
-				</ul>
 				{{/with}}
 			</div>
 		</div>
 		{{/with}}
 
-		{{#with productData.alert}}
-		{{#if isError}}
-		<div class="container py-3">
-			<div class="alert alert-danger" role="alert">
-				{{text}}
+		<div class="col-1">
+			<div class="row">
+
 			</div>
 		</div>
-		{{/if}}
-		{{/with}}
-	</div>
+
+		<div class="col-5">
+
+			<div class="row">
+				<div class="col-12 py-4 ">
+
+				</div>
+			</div>
+
+			{{#with productData}}
+			<div class="container mt-2">
+
+				{{#with item}}
+				<table class="table border table-striped">
+					<thead>
+						<tr class="border bg-secondary">
+							{{#each head}}
+							<th scope="col">{{this}}</th>
+							{{/each}}
+						</tr>
+					</thead>
+					<tbody>
+						{{#each body}}
+						<tr>
+							<th class="border bg-secondary" scope="row">{{this.[0]}}</th>
+							<td>{{this.[1]}}</td>
+							<td>{{this.[2]}}</td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+				{{/with}}
+			</div>
+
+
+
+			<div class="container pt-2">
+
+				<div class="card">
+					{{#with param}}
+					<div class="card-header">
+						<p class="fw-bold fs-4">{{title}} :</p>
+					</div>
+					<ul class="list-group list-group-flush">
+						{{#each list}}
+						<li class="list-group-item"><em class="fw-medium">{{this}}</em></li>
+						{{/each}}
+					</ul>
+					{{/with}}
+				</div>
+			</div>
+			{{/with}}
+
+			{{#with productData.alert}}
+			{{#if isError}}
+			<div class="container py-3">
+				<div class="alert alert-danger" role="alert">
+					{{text}}
+				</div>
+			</div>
+			{{/if}}
+			{{/with}}
+		</div>
 	</div>
 
 	<div class="row">
@@ -192,7 +197,7 @@
 	<br>
 	<hr>
 	<br>
+	{{> shopaction}}
 	<br>
-
-
+	<hr>
 </main>
