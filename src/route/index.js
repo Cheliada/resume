@@ -473,6 +473,91 @@ router.get('/bio', function (req, res) {
 })
 
 // ================================================================
+router.get('/program', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('program', {
+    layout: 'program',
+
+    program: {
+      excursion: {
+        name: 'Cultural Tour',
+        location: {
+          city: 'Paris',
+          country: 'France',
+        },
+        date: '2023-06-15',
+        program: [
+          {
+            name: 'Museum Visit',
+            type: 'Art',
+            duration: 3,
+            details: {
+              museum: {
+                name: 'The Louvre',
+                location: {
+                  address: 'Rue de Rivoli',
+                  city: 'Paris',
+                  country: 'France',
+                },
+                exhibits: [
+                  {
+                    name: 'Mona Lisa',
+                    artist: 'Leonardo da Vinci',
+                    description: 'Iconic portrait painting',
+                    audio_guide: true,
+                  },
+                  {
+                    name: 'Winged Victory of Samothrace',
+                    artist: null,
+                    description:
+                      'Ancient Greek statue of Nike, the goddess of victory',
+                    audio_guide: true,
+                  },
+                ],
+              },
+              guide: {
+                name: 'Francois',
+                language: 'French',
+                rating: 4.8,
+              },
+            },
+          },
+          {
+            name: 'Cultural Show',
+            type: 'Music and Dance',
+            duration: 2,
+            details: {
+              venue: {
+                name: 'Moulin Rouge',
+                location: {
+                  address: '82 Boulevard de Clichy',
+                  city: 'Paris',
+                  country: 'France',
+                },
+              },
+              performers: [
+                {
+                  name: 'Mireille Mathieu',
+                  type: 'Chanson singer',
+                },
+                {
+                  name: "Ballet de l'Opéra National de Paris",
+                  type: 'Classical ballet company',
+                },
+              ],
+              guide: {
+                name: 'Sophie',
+                language: 'English',
+                rating: 4.6,
+              },
+            },
+          },
+        ],
+      },
+    },
+  })
+})
+// ================================================================
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
@@ -601,6 +686,86 @@ router.get('/web', function (req, res) {
   })
 })
 
+// ==============================================================
+
+router.get('/js', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('js', {
+    layout: 'basic',
+    name: 'JavaScript',
+    description:
+      'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+    history: {
+      year: 1995,
+      founder: 'Brendan Eich',
+    },
+    types: [
+      'Number',
+      'String',
+      'Boolean',
+      'Null',
+      'Undefined',
+      'Symbol',
+      'Object',
+    ],
+    syntax: {
+      variables: ['var', 'let', 'const'],
+      functions: ['function'],
+      conditionals: ['if', 'else', 'switch'],
+      loops: ['for', 'while', 'do-while'],
+      classes: ['class'],
+    },
+    features: [
+      'First-class functions',
+      'Closures',
+      'Dynamic typing',
+      'Prototype-based inheritance',
+      'Asynchronous programming with Promises and async/await',
+      'Modules with import/export statements',
+    ],
+    libraries: [
+      'jQuery',
+      'React',
+      'Angular',
+      'Vue',
+      'Node.js',
+      'Express.js',
+      'Lodash',
+      'Moment.js',
+    ],
+    tools: [
+      'Babel',
+      'Webpack',
+      'ESLint',
+      'Jest',
+      'Mocha',
+      'Chai',
+      'Selenium',
+      'Cypress',
+    ],
+    community: [
+      {
+        name: 'Stack Overflow',
+        type: 'forum',
+      },
+      {
+        name: 'JavaScript Weekly',
+        type: 'newsletter',
+      },
+      {
+        name: 'The Changelog',
+        type: 'podcast',
+      },
+      {
+        name: 'CSS-Tricks',
+        type: 'blog',
+      },
+    ],
+  })
+})
+//
 // ================================================================
 // router.get Створює нам один ентпоїнт
 
@@ -704,173 +869,6 @@ router.get('/car', function (req, res) {
 })
 
 // ================================================================
-router.get('/program', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('program', {
-    layout: 'program',
-
-    program: {
-      excursion: {
-        name: 'Cultural Tour',
-        location: {
-          city: 'Paris',
-          country: 'France',
-        },
-        date: '2023-06-15',
-        program: [
-          {
-            name: 'Museum Visit',
-            type: 'Art',
-            duration: 3,
-            details: {
-              museum: {
-                name: 'The Louvre',
-                location: {
-                  address: 'Rue de Rivoli',
-                  city: 'Paris',
-                  country: 'France',
-                },
-                exhibits: [
-                  {
-                    name: 'Mona Lisa',
-                    artist: 'Leonardo da Vinci',
-                    description: 'Iconic portrait painting',
-                    audio_guide: true,
-                  },
-                  {
-                    name: 'Winged Victory of Samothrace',
-                    artist: null,
-                    description:
-                      'Ancient Greek statue of Nike, the goddess of victory',
-                    audio_guide: true,
-                  },
-                ],
-              },
-              guide: {
-                name: 'Francois',
-                language: 'French',
-                rating: 4.8,
-              },
-            },
-          },
-          {
-            name: 'Cultural Show',
-            type: 'Music and Dance',
-            duration: 2,
-            details: {
-              venue: {
-                name: 'Moulin Rouge',
-                location: {
-                  address: '82 Boulevard de Clichy',
-                  city: 'Paris',
-                  country: 'France',
-                },
-              },
-              performers: [
-                {
-                  name: 'Mireille Mathieu',
-                  type: 'Chanson singer',
-                },
-                {
-                  name: "Ballet de l'Opéra National de Paris",
-                  type: 'Classical ballet company',
-                },
-              ],
-              guide: {
-                name: 'Sophie',
-                language: 'English',
-                rating: 4.6,
-              },
-            },
-          },
-        ],
-      },
-    },
-  })
-})
-
-// ================================================================
-
-router.get('/js', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('js', {
-    layout: 'basic',
-    name: 'JavaScript',
-    description:
-      'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
-    history: {
-      year: 1995,
-      founder: 'Brendan Eich',
-    },
-    types: [
-      'Number',
-      'String',
-      'Boolean',
-      'Null',
-      'Undefined',
-      'Symbol',
-      'Object',
-    ],
-    syntax: {
-      variables: ['var', 'let', 'const'],
-      functions: ['function'],
-      conditionals: ['if', 'else', 'switch'],
-      loops: ['for', 'while', 'do-while'],
-      classes: ['class'],
-    },
-    features: [
-      'First-class functions',
-      'Closures',
-      'Dynamic typing',
-      'Prototype-based inheritance',
-      'Asynchronous programming with Promises and async/await',
-      'Modules with import/export statements',
-    ],
-    libraries: [
-      'jQuery',
-      'React',
-      'Angular',
-      'Vue',
-      'Node.js',
-      'Express.js',
-      'Lodash',
-      'Moment.js',
-    ],
-    tools: [
-      'Babel',
-      'Webpack',
-      'ESLint',
-      'Jest',
-      'Mocha',
-      'Chai',
-      'Selenium',
-      'Cypress',
-    ],
-    community: [
-      {
-        name: 'Stack Overflow',
-        type: 'forum',
-      },
-      {
-        name: 'JavaScript Weekly',
-        type: 'newsletter',
-      },
-      {
-        name: 'The Changelog',
-        type: 'podcast',
-      },
-      {
-        name: 'CSS-Tricks',
-        type: 'blog',
-      },
-    ],
-  })
-})
-//
-// ================================================================
-
 // router.get Створює нам один ентпоїнт
 
 router.get('/facebook', function (req, res) {
@@ -1031,7 +1029,130 @@ router.get('/facebook', function (req, res) {
 })
 
 // ================================================================
+router.get('/task21', function (req, res) {
+  res.render('task21', {
+    layout: 'basic',
+    heading: {
+      main: {
+        title: 'JavaScript',
+        text: 'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      second: {
+        title: 'Stack Overflow',
+        text: 'First-class functions',
+        button_text: {
+          soslid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      subblock: {
+        title: 'JavaScript Weekly',
+        text: 'Prototype-based inheritance newsletter',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+    },
+    nested_display: {
+      title: 'HTML',
+      children_display: {
+        title: 'Outdated HTML tags',
+        text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
+        button: {
+          text: 'Орen',
+        },
+      },
+      header_text: 'Sections',
+      button: {
+        text: 'Learn more',
+      },
+    },
+    paragraph: {
+      title: 'About modules',
+      text: 'Modules with import/export statements',
 
+      button: {
+        text: 'Open link page',
+        url: 'https://google.com',
+      },
+      list_name: [
+        {
+          text: 'Github',
+          url: 'https://github.com/',
+        },
+        {
+          text: 'Bootstrap',
+          url: 'https://getbootstrap.com/',
+        },
+      ],
+    },
+  })
+})
+// ================================================================
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/task22', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('task22', {
+    layout: 'default',
+    page_header: {
+      title: 'InnovaMind',
+      description: 'Welcome to our wonderful community',
+    },
+    section: {
+      about_us: {
+        title_list: {
+          main: 'InnovaMind',
+          sub: 'InnovaMind is a forward-thinking startup focused on innovation. We are dedicated to creating efficient and powerful software through the use of first-class functions.',
+        },
+        button: { text: 'Show more' },
+      },
+      advantage: {
+        title: 'Advantage',
+        efficiency: {
+          title: 'Efficiency',
+          sub_title: 'Streamline your software development',
+          description:
+            'Streamline your software development with our innovative platform...',
+          button: 'Show more',
+        },
+        innovation: {
+          title: 'Innovation',
+          sub_title:
+            'Forward-thinking approach to programming',
+          description:
+            ' Stay ahead of the curve with our forward-thinking approach to programming...',
+          button: 'Show more',
+        },
+        collaboration: {
+          title: 'Collaboration',
+          sub_title: 'Connect with like-minded developers',
+          description:
+            'Connect with a community of like-minded developers to share knowledge and insights...',
+          button: 'Show more',
+        },
+      },
+      agreement: {
+        title: 'Terms of use',
+        info: {
+          sub_title: 'Check out our requirements',
+          detail: {
+            text: 'By using or accessing the service, you agree to be bound by the terms and conditions outlined in the agreement.',
+            button: 'Аccept',
+          },
+        },
+      },
+    },
+  })
+})
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -1290,69 +1411,6 @@ router.get('/task31', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
-// router.get Створює нам один ентпоїнт
-
-//           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/task22', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('task22', {
-    layout: 'default',
-    page_header: {
-      title: 'InnovaMind',
-      description: 'Welcome to our wonderful community',
-    },
-    section: {
-      about_us: {
-        title_list: {
-          main: 'InnovaMind',
-          sub: 'InnovaMind is a forward-thinking startup focused on innovation. We are dedicated to creating efficient and powerful software through the use of first-class functions.',
-        },
-        button: { text: 'Show more' },
-      },
-      advantage: {
-        title: 'Advantage',
-        efficiency: {
-          title: 'Efficiency',
-          sub_title: 'Streamline your software development',
-          description:
-            'Streamline your software development with our innovative platform...',
-          button: 'Show more',
-        },
-        innovation: {
-          title: 'Innovation',
-          sub_title:
-            'Forward-thinking approach to programming',
-          description:
-            ' Stay ahead of the curve with our forward-thinking approach to programming...',
-          button: 'Show more',
-        },
-        collaboration: {
-          title: 'Collaboration',
-          sub_title: 'Connect with like-minded developers',
-          description:
-            'Connect with a community of like-minded developers to share knowledge and insights...',
-          button: 'Show more',
-        },
-      },
-      agreement: {
-        title: 'Terms of use',
-        info: {
-          sub_title: 'Check out our requirements',
-          detail: {
-            text: 'By using or accessing the service, you agree to be bound by the terms and conditions outlined in the agreement.',
-            button: 'Аccept',
-          },
-        },
-      },
-    },
-  })
-})
-
-router.get('/task21', function (req, res) {
-  // res.render генерує нам HTML сторінку
 
 // ================================================================
 
@@ -1642,77 +1700,12 @@ router.get('/shophome', function (req, res) {
         },
       ],
     ],
- })
-  //                  ↑↑ сюди вводимо JSON дані
-})
-
-// ================================================================
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('task21', {
-    layout: 'default',
-    heading: {
-      main: {
-        title: 'JavaScript',
-        text: 'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
-        button_text: {
-          solid: 'Open page',
-          outline: 'Add to cart',
-        },
-      },
-      second: {
-        title: 'Stack Overflow',
-        text: 'First-class functions',
-        button_text: {
-          solid: 'Open page',
-          outline: 'Add to cart',
-        },
-      },
-      subblock: {
-        title: 'JavaScript Weekly',
-        text: 'Prototype-based inheritance newsletter',
-        button_text: {
-          solid: 'Open page',
-          outline: 'Add to cart',
-        },
-      },
-    },
-    nested_display: {
-      title: 'HTML',
-      children_display: {
-        title: 'Outdated HTML tags',
-        text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
-        button: {
-          text: 'Орen',
-        },
-      },
-      header_text: 'Sections',
-      button: {
-        text: 'Learn more',
-      },
-    },
-    paragraph: {
-      title: 'About modules',
-      text: 'Modules with import/export statements',
-
-      button: {
-        text: 'Open link page',
-        url: 'https://google.com',
-      },
-      list_name: [
-        {
-          text: 'Github',
-          url: 'https://github.com/',
-        },
-        {
-          text: 'Bootstrap',
-          url: 'https://getbootstrap.com/',
-        },
-      ],
-    },
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+// ================================================================
+//            ↙ cюди вводимо назву файлу з сontainer
 // ================================================================
 // Підключаємо роутер до бек-енду
 module.exports = router
