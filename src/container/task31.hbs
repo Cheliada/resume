@@ -91,17 +91,23 @@
     <br>
     <hr>
     {{#with gallery}}
-    <div class="row">
-        <h2 class="text-center">{{title}}</h2>
+
+
+    <h2 class="text-center text-uppercase">{{title}}</h2>
+
+    <div class="row ">
+
         {{#each cards}}
-        <div class="col-4">
+
+        <div class="col-3 card">
+
+
             <div class="card-header">
                 <div>{{name}}</div>
             </div>
             <ul class="list-group">
                 <li class="list-group-item">
                     <ul class="list-group">
-                        <div class="card"></div>
                         {{#each items}}
                         <li class="list-group-item">
                             <p>{{this}}</p>
@@ -109,11 +115,15 @@
                         {{/each}}
                     </ul>
                 </li>
+
+            </ul>
+
+
         </div>
         {{/each}}
-        </ul>
     </div>
     {{/with}}
+
     <br>
     <br>
     <br>
