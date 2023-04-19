@@ -1,0 +1,78 @@
+<main>
+    {{> breadcrumb}}
+
+    {{#with newsData}}
+    <div class="card">
+        <img src="{{photo}}" class="card-img-top" alt="{{head.heading}}">
+        {{#with head}}
+        <div class="card-body my-3">
+            <div class="card-header text-light bg-dark border my-3 pt-3">
+                <h3 class="card-title text-uppercase text-start fw-bold ">
+                    {{heading}}
+                </h3>
+            </div>
+            <em class="card-text text-start fw-medium fs-5">{{description}}</em>
+            {{/with}}
+            {{#each body}}
+            <div class="col-6 card-header text-light bg-dark border my-3 pt-3">
+                <h5 class="card-title text-uppercase text-start fw-bold ">{{title}}</h5>
+            </div>
+            <p class="card-text text-start fw-medium fs-5">{{text}}</p>
+            {{/each}}
+
+            {{/with}}
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    {{#with newsOtherBlock}}
+    <section class="my-2">
+        <div class="row text-center text-uppercase ">
+            <h2>{{title}}</h2>
+        </div>
+        <br>
+        <div class="row">
+            {{#each cards}}
+            <div class="col-3">
+                <div class="row p-1">
+                    <div class="card bg-secondary text-light p-1">
+                        <div class="card-header py-1">
+                            <div class="row">
+                                <div class="col-6 text-start">
+                                    <div class="row">
+                                        {{#if isTop}}
+                                        <p> <span class="badge bg-danger rounded-pill text-start"> TOP </span></p>
+                                        {{else}}
+                                        {{/if}}
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row text-end">
+                                        {{#if idNew}}
+                                        <p> <span class="badge bg-success rounded-pill text-end"> NEW </span></p>
+                                        {{else}}
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-title text-center p-1">
+                            <p class="fs-5 fw-bold text-normal text-uppercase">{{title}} </p>
+                        </div>
+                        <div class="card-body">
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/with}}
+    <br>
+    <br>
+    <hr>
+    {{> shopaction}}
+    <hr>
+</main>
