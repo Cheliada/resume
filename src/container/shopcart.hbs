@@ -1,6 +1,6 @@
 <main>
     {{#with header}}
-    <h2 class="dark lowercase">{{title}}</h2>
+    <h1 class="dark text-lowercase">{{title}}</h1>
     {{#with button}}
     <a href="{{link}}" type="button" class="btn btn-outline-secondary">{{text}}</a>
     {{/with}}
@@ -14,20 +14,20 @@
 
             <div class="col-7 row">
 
-
-                <div class="col-4 mx-4 p-4">
+                {{!-- фото товару --}}
+                <div class="col-3 mx-4 p-4">
                     <img class="ms-3 me-0" src="{{image}}" aly="{{name}}">
                 </div>
 
-
-                <div class="col-7 pt-4">
+                {{!-- опис товару і назва --}}
+                <div class="col-8 pt-4">
                     <p class="fs-4 fw-medium">{{name}}</p>
                     <p>{{description}}</p>
                 </div>
 
             </div>
-            <div class="col-4 row p-3">
-
+            <div class="col-5 row p-3">
+                {{!-- Ціна --}}
                 <div class="col-5 p-4">
                     {{#with price}}
                     <p>{{title}}</p>
@@ -35,12 +35,12 @@
                     {{/with}}
                 </div>
 
-
+                {{!-- Кількість --}}
                 <div class="col-3 p-5">
                     {{amount}}
                 </div>
 
-
+                {{!-- Кнопки --}}
                 <div class="col-4">
                     {{#each buttons}}
                     {{#if isPrimary}}
@@ -55,15 +55,105 @@
                     {{#if noCondition}}
                     <a class="btn btn-primary px-4 mx-0" href="{{link}}">{{text}}</a>
                     {{/if}}
-
                     {{/each}}
 
                 </div>
             </div>
         </div>
+
         {{/each}}
     </section>
-
     <hr>
+    {{#with total}}
+    <h3 class="dark text-lowercase">{{title}}</h3>
+    <strong class="fs-5 btn-dark">{{amount}}</strong>
+    <div>
+        <em class="secondary">{{delivery}}</em>
+    </div>
+    <br>
+    <div class="col-4">
+        {{#each buttons}}
+        {{#if isSuccess}}
+        <a href="link" class="btn btn-success disabled" role="button" aria-disabled="true">{{text}}</a>
+        {{/if}}
+        <br>
+        {{#if isOutline}}
+        <a href="link" type="button" class="btn btn-outline-success">{{text}}</a>
+        {{/if}}
+        {{/each}}
+    </div>
+    {{/with}}
+    <br>
+    <br>
+    <hr>
+    {{#with goodsOtherBlock}}
+    <h2 class="dark text-center">{{title}}</h2>
+    <div class="row">
+        {{#each cards}}
+        <div class="col-4">
+            <div class="card bg-secondary text-light ">
+                {{#if image}}
+                <img src="{{image}}" class="card-img-top" alt="{{title}}">
+                {{/if}}
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{title}}
+                        {{#if idNew}}
+                        <span class="badge bg-success rounded-pill fs-6 fw-bold"> NEW </span>
+                        {{/if}}
+                        {{#if isNew}}
+                        <span class="badge bg-success rounded-pill fs-6 fw-bold"> NEW </span>
+                        {{/if}}
+                        {{#if isHot}}
+                        <span class="badge bg-primary rounded-pill fs-6 fw-bold"> TOP </span>
+                        {{/if}}
+                    </h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
 
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+    <br>
+    <hr>
+    {{#with subscribe}}
+    <div class="row my-3 mx-3">
+        <div class="col-12">
+            <div class="row">
+                <div class="card bg-secondary ">
+                    <div class="card-body my-3">
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="text-light">
+                                    <h2>{{header}}</h2>
+                                    <p>{{description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="row">
+                                </div>
+                            </div>
+
+                            {{#each buttons}}
+                            <div>
+                                <a type="button" class="btn btn-primary" href="{{link}}">
+                                    {{text}}
+                                </a>
+                            </div>
+                            {{/each}}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/with}}
+    <br>
+    <hr>
 </main>
