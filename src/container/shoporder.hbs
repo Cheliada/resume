@@ -208,7 +208,7 @@
                     <h3 class="ms-3">{{title}}</h3>
                     {{#with select.availabel_coupon}}
                     <h6>{{label}}</h6>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <select class="form-control-lg" aria-label=".form-select-sm example">
                         <option selected> {{placeholder}}</option>
                         {{#each options}}
                         <option value="{{value}}">{{text}}</option>
@@ -236,7 +236,7 @@
                 <div class="row py-1">
                     {{#with add.friend}}
                     <label for="inputLabel" class="form-label fw-medium">{{label}}</label>
-                    <input class="form-control" type="text" value="{{placeholder}}">
+                    <input class="form-control-lg" type="text" value="{{placeholder}}">
                     <div id="Help" class="form-text">{{caption}}</div>
                     {{/with}}
                 </div>
