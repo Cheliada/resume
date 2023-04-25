@@ -1,0 +1,83 @@
+<main>
+    {{#with formBlock}}
+    <div class="row">
+        <div class="col-12">
+            <h1>{{header}}</h1>
+            <br>
+            <p class="mb-3">{{rating.title}}: {{rating.value}}</p>
+            {{#with actionBlock}}
+            <ul class="nav nav-tabs mb-5">
+                {{#each tabs}}
+                <li class="nav-item">
+                    <a class="nav-link {{#if isActive}}active{{/if}} " href="#"><span class="px-5">{{text}}</span></a>
+                </li>
+                {{/each}}
+            </ul>
+            <hr class="my-5">
+            {{#with report}}
+            <div class="input-group">
+                <input class="form-control col-1" type="text" placeholder="{{placeholder}}">
+                <a class="btn-secondary btn" href="{{button.link}}">{{button.text}}</a>
+            </div>
+            {{/with}}
+            {{/with}}
+            <hr class="my-5">
+        </div>
+        {{#with feedbackBlock}}
+        <h2 class="mb-5 display-6"><strong>{{title}}</strong></h2>
+        {{#each buttons}}
+        <a class="mt-5 btn {{#if isSuccess}}btn-success{{/if}} {{#if isWarning}}btn-warning{{/if}} {{#if isDanger}}btn-danger{{/if}}"
+            href="{{link}}">{{text}}</a>
+        {{/each}}
+        {{/with}}
+    </div>
+    {{/with}}
+    <br>
+    <hr>
+    {{#each reviewList}}
+    <div class="card">
+        <div class="card-body">
+            <div class="card">
+                <h5>{{title.userName}}</h5>
+                <i>{{title.caption}}</i>
+                <em>{{title.date}}</em>
+            </div>
+            <br>
+            <div class="card">
+                <h6>{{reviewBody.seller.title}}: {{reviewBody.seller.value}}</h6>
+                <i>{{reviewBody.rating.title}}: {{reviewBody.rating.value}}</i>
+                <br>
+                <p>{{reviewBody.text}}</p>
+                <b>{{reviewBody.advantages.title}}:</b>
+                <em>{{reviewBody.advantages.text}}</em>
+                <br>
+                <b>{{reviewBody.disadvantages.title}}:</b>
+                <em>{{reviewBody.disadvantages.text}}</em>
+                <br>
+                {{#with reviewBody}}
+                <div class="row">
+                    {{#each images}}
+                    <div class="col-3"><img src="{{this}}" alt="photo" width="110"></div>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+            <br>
+            {{#with reviewBody}}
+
+            {{#each coments}}
+            <div class="card">
+                <h5>{{userName}}</h5>
+                <date>{{date}}</date>
+                <q>{{text}}</q>
+            </div>
+            <br>
+            {{/each}}
+
+            {{/with}}
+        </div>
+    </div>
+    {{/each}}
+    <br>
+    {{> shopaction}}
+</main>
