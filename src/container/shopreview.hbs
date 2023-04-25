@@ -2,25 +2,61 @@
     {{#with formBlock}}
     <div class="row">
         <div class="col-12">
-            <h1>{{header}}</h1>
-            <br>
-            <p class="mb-3">{{rating.title}}: {{rating.value}}</p>
-            {{#with actionBlock}}
-            <ul class="nav nav-tabs mb-5">
-                {{#each tabs}}
-                <li class="nav-item">
-                    <a class="nav-link {{#if isActive}}active{{/if}} " href="#"><span class="px-5">{{text}}</span></a>
-                </li>
-                {{/each}}
-            </ul>
-            <hr class="my-5">
-            {{#with report}}
-            <div class="input-group">
-                <input class="form-control col-1" type="text" placeholder="{{placeholder}}">
-                <a class="btn-secondary btn" href="{{button.link}}">{{button.text}}</a>
+            <div class="col-8">
+                <h1>{{header}}</h1>
+                <br>
+                <p class="mb-3">{{rating.title}}: {{rating.value}}</p>
+                {{#with actionBlock}}
+                <ul class="nav nav-tabs mb-5">
+                    {{#each tabs}}
+                    <li class="nav-item">
+                        <a class="nav-link {{#if isActive}}active{{/if}} " href="#"><span
+                                class="px-5">{{text}}</span></a>
+                    </li>
+                    {{/each}}
+                </ul>
+                <hr class="my-5">
+                {{#with report}}
+                <div class="input-group">
+                    <input class="form-control col-1" type="text" placeholder="{{placeholder}}">
+                    <a class="btn-secondary btn" href="{{button.link}}">{{button.text}}</a>
+                </div>
+                {{/with}}
+                {{/with}}
+
             </div>
-            {{/with}}
-            {{/with}}
+
+            <div class="col-4">
+                {{#with goodsInfo}}
+                <div class="card">
+                    <div class="col-2"><img src="{{photo}}" alt="photo" width="110"></div>
+                    <br>
+                    <h5>{{name}}</h5>
+                </div>
+                <br>
+                <div class="card">
+                    <b>{{price}}</b>
+                    {{#if inMarket}}
+                    <p>Є в наявності</p>
+                    {{/if}}
+                    {{#each buttons}}
+                    {{#if isPrimary}}
+                    <a href="{{link}}" type="button" class="btn btn-primary">{{text}}</a>
+                    {{/if}}
+
+                    {{#if isSecondary}}
+                    <a href="{{link}}" type="button" class="btn btn-secondary">{{text}}</a>
+                    {{/if}}
+                    {{/each}}
+                    <br>
+                    <div class="card">
+                        <p>{{seller.title}}: <b>{{seller.value}}</b></p>
+                    </div>
+                </div>
+                {{/with}}
+
+
+            </div>
             <hr class="my-5">
         </div>
         {{#with feedbackBlock}}
