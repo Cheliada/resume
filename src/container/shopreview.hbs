@@ -1,120 +1,173 @@
 <main>
-    {{#with formBlock}}
-    <div class="row">
-        <div class="col-14">
-            <div class="col-8">
-                <h1>{{header}}</h1>
-                <br>
-                <p class="mb-3">{{rating.title}}: {{rating.value}}</p>
-                {{#with actionBlock}}
-                <ul class="nav nav-tabs mb-5">
-                    {{#each tabs}}
-                    <li class="nav-item">
-                        <a class="nav-link {{#if isActive}}active{{/if}} " href="#"><span
-                                class="px-5">{{text}}</span></a>
-                    </li>
-                    {{/each}}
-                </ul>
-                <hr class="my-5">
-                {{#with report}}
-                <div class="input-group">
-                    <input class="form-control col-1" type="text" placeholder="{{placeholder}}">
-                    <a class="btn-secondary btn" href="{{button.link}}">{{button.text}}</a>
+    <div class="col-12">
+        <div class="row p-3 g-3 p-3 border-bottom border-4">
+            <div class="col-8 p-2">
+                <div class="row p-3">
+                    {{#with formBlock}}
+                    <div class="col-12 p-3">
+                        <div class="row p-2">
+                            <p class="fs-3 fw-bold">{{header}}</p>
+                            {{#with rating}}
+                            <p class="fs-6 fw-normal ms-1">{{title}} : {{value}}</p>
+                            {{/with}}
+                        </div>
+                        {{#with actionBlock}}
+                        <div class="row mb-2 py-5 border-1">
+                            <ol class="nav nav-tabs justify-content-between text-center ">
+                                {{#each tabs}}
+                                {{#if isActive}}
+                                <div class="col-3 px-3 ">
+                                    <li class="nav-item active">
+                                        <a class="nav-link fs-4 fw-normal active" href="#">{{text}}</a>
+                                    </li>
+                                </div>
+                                {{else}}
+                                <div class="col-3 px-3">
+                                    <li class="nav-item active">
+                                        <a class="nav-link fs-4 fw-normal" href="#">{{text}}</a>
+                                    </li>
+                                </div>
+                                {{/if}}
+                                {{/each}}
+                            </ol>
+
+                        </div>
+                        <div class="row border-top border-bottom border-5 py-5 my-5">
+                            {{#with report}}
+                            <div class="input-group">
+                                <input class="form-control col-1" type="text" placeholder="{{placeholder}}">
+                                <a class="btn-secondary btn" href="{{button.link}}">{{button.text}}</a>
+                            </div>
+                            {{/with}}
+                        </div>
+
+                        {{/with}}
+                        {{#with feedbackBlock}}
+                        <h2 class="mb-5 display-6"><strong>{{title}}</strong></h2>
+                        {{#each buttons}}
+                        <a class="mt-5 btn {{#if isSuccess}}btn-success{{/if}} {{#if isWarning}}btn-warning{{/if}} {{#if isDanger}}btn-danger{{/if}}"
+                            href="{{link}}">{{text}}</a>
+                        {{/each}}
+                        {{/with}}
+                    </div>
                 </div>
-                {{/with}}
-                {{/with}}
+            </div>
+            <div class="col-4">
+
+                <div class="row justify-content-center p-2">
+                    {{#with goodsInfo}}
+                    <div class="col-12">
+                        <div class="row">
+                            {{#with goodsInfo}}
+                            <div class="card">
+                                <div class="col-2"><img src="{{photo}}" alt="photo"></div>
+                                <br>
+                                <h5>{{name}}</h5>
+                            </div>
+                            <br>
+                            <div class="card">
+                                <b>{{price}}</b>
+                                {{#if inMarket}}
+                                <p>Є в наявності</p>
+                                {{/if}}
+                                {{#each buttons}}
+                                {{#if isPrimary}}
+                                <a href="{{link}}" type="button" class="btn btn-primary">{{text}}</a>
+                                {{/if}}
+
+                                {{#if isSecondary}}
+                                <a href="{{link}}" type="button" class="btn btn-secondary">{{text}}</a>
+                                {{/if}}
+                                {{/each}}
+                                <br>
+                                <div class="card">
+                                    <p>{{seller.title}}: <b>{{seller.value}}</b></p>
+                                </div>
+                            </div>
+                            {{/with}}
+                        </div>
+
+                        <div class="row my-3">
+                            <div class="card px-4 card-body ">
+                                <p class="lh-1 fs-4 fw-medium ">{{price}}</p>
+                                {{#if inMarket}}
+                                <p class="lh-1 fs-6 fw-italic py-0 my-0">Є в наявності</p>
+                                {{/if}}
+                                <p class="fs-4 fw-medium py-0 my-0">{{title}}</p>
+                                <p class="fs-2 fw-medium py-0 my-0">{{amount}}</p>
+                                <p class="py-0">{{delivery}}</p>
+                                <div class="col-4 py-0 my-0">
+                                    {{#each buttons}}
+                                    <div class="row py-0 my-0">
+                                        <ol class="nav nav-item py-0 my-0">
+                                            <li class="nav-link px-2 py-1">{{> buttons}}</li>
+                                        </ol>
+                                    </div>
+                                    {{/each}}
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row my-3">
+                            <div class="card px-4 card-body ">
+                                {{#with seller}}
+                                <p class="text-body my-2"><b>{{title}} : </b>{{value}}</p>
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
 
             </div>
-
-        </div>
-        <hr class="my-5">
-        <div class="col-8">
-            {{#with feedbackBlock}} <h2 class="mb-5 display-6"><strong>{{title}}</strong></h2>
-            {{#each buttons}}
-            <a class="mt-5 btn {{#if isSuccess}}btn-success{{/if}} {{#if isWarning}}btn-warning{{/if}} {{#if isDanger}}btn-danger{{/if}}"
-                href="{{link}}">{{text}}</a>
-            {{/each}}
             {{/with}}
-        </div>
-        <div class="col-4">
-            {{#with goodsInfo}}
-            <div class="card">
-                <div class="col-2"><img src="{{photo}}" alt="photo" width="110"></div>
-                <br>
-                <h5>{{name}}</h5>
-            </div>
-            <br>
-            <div class="card">
-                <b>{{price}}</b>
-                {{#if inMarket}}
-                <p>Є в наявності</p>
-                {{/if}}
-                {{#each buttons}}
-                {{#if isPrimary}}
-                <a href="{{link}}" type="button" class="btn btn-primary">{{text}}</a>
-                {{/if}}
 
-                {{#if isSecondary}}
-                <a href="{{link}}" type="button" class="btn btn-secondary">{{text}}</a>
-                {{/if}}
-                {{/each}}
+        </div>
+        {{#each reviewList}}
+        <div class="card">
+            <div class="card-body">
+                <div class="card">
+                    <h5>{{title.userName}}</h5>
+                    <i>{{title.caption}}</i>
+                    <em>{{title.date}}</em>
+                </div>
                 <br>
                 <div class="card">
-                    <p>{{seller.title}}: <b>{{seller.value}}</b></p>
+                    <h6>{{reviewBody.seller.title}}: {{reviewBody.seller.value}}</h6>
+                    <i>{{reviewBody.rating.title}}: {{reviewBody.rating.value}}</i>
+                    <br>
+                    <p>{{reviewBody.text}}</p>
+                    <b>{{reviewBody.advantages.title}}:</b>
+                    <em>{{reviewBody.advantages.text}}</em>
+                    <br>
+                    <b>{{reviewBody.disadvantages.title}}:</b>
+                    <em>{{reviewBody.disadvantages.text}}</em>
+                    <br>
+                    {{#with reviewBody}}
+                    <div class="row">
+                        {{#each images}}
+                        <div class="col-3"><img src="{{this}}" alt="photo" width="110"></div>
+                        {{/each}}
+                    </div>
+                    {{/with}}
                 </div>
-            </div>
-            {{/with}}
-
-
-        </div>
-    </div>
-    {{/with}}
-    <br>
-    <hr>
-    {{#each reviewList}}
-    <div class="card">
-        <div class="card-body">
-            <div class="card">
-                <h5>{{title.userName}}</h5>
-                <i>{{title.caption}}</i>
-                <em>{{title.date}}</em>
-            </div>
-            <br>
-            <div class="card">
-                <h6>{{reviewBody.seller.title}}: {{reviewBody.seller.value}}</h6>
-                <i>{{reviewBody.rating.title}}: {{reviewBody.rating.value}}</i>
-                <br>
-                <p>{{reviewBody.text}}</p>
-                <b>{{reviewBody.advantages.title}}:</b>
-                <em>{{reviewBody.advantages.text}}</em>
-                <br>
-                <b>{{reviewBody.disadvantages.title}}:</b>
-                <em>{{reviewBody.disadvantages.text}}</em>
                 <br>
                 {{#with reviewBody}}
-                <div class="row">
-                    {{#each images}}
-                    <div class="col-3"><img src="{{this}}" alt="photo" width="110"></div>
-                    {{/each}}
+
+                {{#each coments}}
+                <div class="card">
+                    <h5>{{userName}}</h5>
+                    <date>{{date}}</date>
+                    <q>{{text}}</q>
                 </div>
+                <br>
+                {{/each}}
+
                 {{/with}}
             </div>
-            <br>
-            {{#with reviewBody}}
-
-            {{#each coments}}
-            <div class="card">
-                <h5>{{userName}}</h5>
-                <date>{{date}}</date>
-                <q>{{text}}</q>
-            </div>
-            <br>
-            {{/each}}
-
-            {{/with}}
         </div>
-    </div>
-    {{/each}}
-    <br>
-    {{> shopaction}}
+        {{/each}}
+        <br>
+        {{> shopaction}}
 </main>
