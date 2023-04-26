@@ -37,11 +37,57 @@ var footer = {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
+router.get('/index', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    page: {
+      name: 'Юлія Челяда',
+      title: 'Resume proect',
+    },
+
+    main: {
+      title: 'Список сторінок',
+      text: 'Насправді дуже складно мені це все вдається і половини я не розумію.І пишучи навіть зараз це ТЗ,незнаю чи я правильно зрозуміла,що я маю робити,головне щоб час не був витрачний дарма.Але мені подобається це все.',
+    },
+
+    buttons: [
+      {
+        text: 'Summary',
+        href: 'http://localhost:3000/summary',
+      },
+      {
+        text: 'Skills',
+        href: 'http://localhost:3000/skills',
+      },
+      {
+        text: 'Education',
+        href: 'http://localhost:3000/education',
+      },
+      {
+        text: 'Work',
+        href: 'http://localhost:3000/work',
+      },
+      {
+        text: 'Person',
+        href: 'http://localhost:3000/person',
+      },
+      {
+        text: 'Bio',
+        href: 'http://localhost:3000/bio',
+      },
+      {
+        text: 'Program',
+        href: 'http://localhost:3000/program',
+      },
+      {
+        text: 'Web',
+        href: 'http://localhost:3000/web',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
