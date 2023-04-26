@@ -1,5 +1,5 @@
 <main>
-    <div class="col-12">
+    <div class="col-14">
         <div class="row p-3 g-3 p-3 border-bottom border-4">
             <div class="col-8 p-2">
                 <div class="row p-3">
@@ -34,9 +34,15 @@
                         </div>
                         <div class="row border-top border-bottom border-5 py-5 my-5">
                             {{#with report}}
-                            <div class="input-group">
-                                <input class="form-control col-1" type="text" placeholder="{{placeholder}}">
-                                <a class="btn-secondary btn" href="{{button.link}}">{{button.text}}</a>
+                            <div class="card card-body border-2 my-5 p-5"
+                                style="background-color:rgba(0, 140, 255, 0.048)">
+                                <p class="fw-medium">{{title}}</p>
+                                <div class="col-4">
+                                    {{#with button}}
+                                    <a type="button" class="btn btn-secondary" href="{{link}}"
+                                        target="_blank">{{text}}</a>
+                                    {{/with}}
+                                </div>
                             </div>
                             {{/with}}
                         </div>
@@ -54,119 +60,45 @@
             </div>
             <div class="col-4">
 
-                <div class="row justify-content-center p-2">
-                    {{#with goodsInfo}}
-                    <div class="col-12">
-                        <div class="row">
-                            {{#with goodsInfo}}
-                            <div class="card">
-                                <div class="col-2"><img src="{{photo}}" alt="photo"></div>
-                                <br>
-                                <h5>{{name}}</h5>
-                            </div>
+
+                {{#with goodsInfo}}
+                <div class="col-12">
+                    <div class="row">
+                        <div class="card">
+                            <img class="card-img-top" src="{{photo}}" alt="Зображення">
+                            <p>{{name}}</p>
+                        </div>
+                        <br>
+                        <div class="card">
+                            <b>{{price}}</b>
+                            {{#if inMarket}}
+                            <p>Є в наявності</p>
+                            {{/if}}
+                            {{#each buttons}}
+                            {{#if isPrimary}}
+                            <a href="{{link}}" type="button" class="btn btn-primary">{{text}}</a>
+                            {{/if}}
+
+                            {{#if isSecondary}}
+                            <a href="{{link}}" type="button" class="btn btn-secondary">{{text}}</a>
+                            {{/if}}
+                            {{/each}}
                             <br>
-                            <div class="card">
-                                <b>{{price}}</b>
-                                {{#if inMarket}}
-                                <p>Є в наявності</p>
-                                {{/if}}
-                                {{#each buttons}}
-                                {{#if isPrimary}}
-                                <a href="{{link}}" type="button" class="btn btn-primary">{{text}}</a>
-                                {{/if}}
-
-                                {{#if isSecondary}}
-                                <a href="{{link}}" type="button" class="btn btn-secondary">{{text}}</a>
-                                {{/if}}
-                                {{/each}}
-                                <br>
-                                <div class="card">
-                                    <p>{{seller.title}}: <b>{{seller.value}}</b></p>
-                                </div>
-                            </div>
-                            {{/with}}
                         </div>
-
-                        <div class="row my-3">
-                            <div class="card px-4 card-body ">
-                                <p class="lh-1 fs-4 fw-medium ">{{price}}</p>
-                                {{#if inMarket}}
-                                <p class="lh-1 fs-6 fw-italic py-0 my-0">Є в наявності</p>
-                                {{/if}}
-                                <p class="fs-4 fw-medium py-0 my-0">{{title}}</p>
-                                <p class="fs-2 fw-medium py-0 my-0">{{amount}}</p>
-                                <p class="py-0">{{delivery}}</p>
-                                <div class="col-4 py-0 my-0">
-                                    {{#each buttons}}
-                                    <div class="row py-0 my-0">
-                                        <ol class="nav nav-item py-0 my-0">
-                                            <li class="nav-link px-2 py-1">{{> buttons}}</li>
-                                        </ol>
-                                    </div>
-                                    {{/each}}
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row my-3">
-                            <div class="card px-4 card-body ">
-                                {{#with seller}}
-                                <p class="text-body my-2"><b>{{title}} : </b>{{value}}</p>
-                                {{/with}}
-                            </div>
+                        <div class="card">
+                            <p>{{seller.title}}: <b>{{seller.value}}</b></p>
                         </div>
                     </div>
-                    {{/with}}
                 </div>
+                {{/with}}
+
 
             </div>
             {{/with}}
 
         </div>
         {{#each reviewList}}
-        <div class="card">
-            <div class="card-body">
-                <div class="card">
-                    <h5>{{title.userName}}</h5>
-                    <i>{{title.caption}}</i>
-                    <em>{{title.date}}</em>
-                </div>
-                <br>
-                <div class="card">
-                    <h6>{{reviewBody.seller.title}}: {{reviewBody.seller.value}}</h6>
-                    <i>{{reviewBody.rating.title}}: {{reviewBody.rating.value}}</i>
-                    <br>
-                    <p>{{reviewBody.text}}</p>
-                    <b>{{reviewBody.advantages.title}}:</b>
-                    <em>{{reviewBody.advantages.text}}</em>
-                    <br>
-                    <b>{{reviewBody.disadvantages.title}}:</b>
-                    <em>{{reviewBody.disadvantages.text}}</em>
-                    <br>
-                    {{#with reviewBody}}
-                    <div class="row">
-                        {{#each images}}
-                        <div class="col-3"><img src="{{this}}" alt="photo" width="110"></div>
-                        {{/each}}
-                    </div>
-                    {{/with}}
-                </div>
-                <br>
-                {{#with reviewBody}}
-
-                {{#each coments}}
-                <div class="card">
-                    <h5>{{userName}}</h5>
-                    <date>{{date}}</date>
-                    <q>{{text}}</q>
-                </div>
-                <br>
-                {{/each}}
-
-                {{/with}}
-            </div>
-        </div>
+        {{> reviewItem}}
         {{/each}}
         <br>
         {{> shopaction}}
